@@ -6,7 +6,7 @@ RUN useradd -ms /bin/bash tools
 
 # Update container libraries and install tools available from the repos
 RUN dnf -y update && \
-dnf install -y epel-release vim tar wget java-17-openjdk maven sudo gzip git rsync podman bash unzip openssh-clients ansible-core python3-pip jq && \
+dnf install -y epel-release vim tar wget java-17-openjdk maven sudo gzip git rsync podman bash unzip openssh-clients ansible-core python3-pip jq pdflatex && \
 dnf clean all
 
 # Install the latest version of OpenShift Do (odo)
