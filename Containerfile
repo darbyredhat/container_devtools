@@ -9,12 +9,7 @@ RUN dnf -y update && \
 dnf install -y epel-release vim tar wget java-17-openjdk maven sudo gzip git rsync podman bash unzip openssh-clients ansible-core python3-pip jq && \
 dnf clean all
 
-# Download and install TeX Live
-RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
-    tar -xzvf install-tl-unx.tar.gz && \
-    cd $(ls -d install-tl-*/ | head -n 1) && \
-    ./install-tl -scheme basic -profile /dev/null
-    
+
 # Install the latest version of OpenShift Do (odo)
 RUN curl -L https://developers.redhat.com/content-gateway/rest/mirror/pub/openshift-v4/clients/odo/v3.15.0/odo-linux-arm64 -o odo && \
 sudo install -o root -g root -m 0755 odo /usr/local/bin/odo
